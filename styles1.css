@@ -1,0 +1,1028 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap');
+
+/* CSS Custom Properties - Mumbai Color Palette */
+:root {
+    /* Mumbai-inspired Earth Tones */
+    --earth-terracotta: #E2725B;
+    --sage-green: #9CAF88;
+    --mumbai-blue: #3A5199;
+    --coastal-blue: #47A8BD;
+    --sunset-orange: #FF9666;
+    --mumbai-dark: #2C3E50;
+    
+    /* Category Colors */
+    --transport-blue: #3498DB;
+    --housing-green: #27AE60;
+    --food-orange: #F39C12;
+    --shopping-purple: #9B59B6;
+    
+    /* Functional Colors */
+    --success-green: #2ECC71;
+    --warning-orange: #E67E22;
+    --error-red: #E74C3C;
+    --info-blue: #3498DB;
+    
+    /* Background */
+    --background-texture: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f8f9fa' fill-opacity='0.03'%3E%3Cpath d='m0 40l40-40h-40v40zm40 0v-40h-40l40 40z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%), var(--background-texture);
+    background-attachment: fixed;
+    color: var(--mumbai-dark);
+    line-height: 1.6;
+}
+
+.mumbai-background {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%), var(--background-texture);
+    min-height: 100vh;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.text-mumbai-dark { color: var(--mumbai-dark); }
+.text-earth-terracotta { color: var(--earth-terracotta); }
+.text-mumbai-blue { color: var(--mumbai-blue); }
+.text-coastal-blue { color: var(--coastal-blue); }
+.text-transport-blue { color: var(--transport-blue); }
+.text-housing-green { color: var(--housing-green); }
+.text-food-orange { color: var(--food-orange); }
+.text-shopping-purple { color: var(--shopping-purple); }
+
+/* Background Colors */
+.bg-mumbai-dark { background-color: var(--mumbai-dark); }
+.bg-earth-terracotta { background-color: var(--earth-terracotta); }
+.bg-mumbai-blue { background-color: var(--mumbai-blue); }
+.bg-coastal-blue { background-color: var(--coastal-blue); }
+.bg-transport-blue { background-color: var(--transport-blue); }
+.bg-housing-green { background-color: var(--housing-green); }
+.bg-food-orange { background-color: var(--food-orange); }
+.bg-shopping-purple { background-color: var(--shopping-purple); }
+
+/* Navigation */
+.nav-tabs {
+    display: flex;
+    align-items: center;
+}
+
+.nav-tab {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: var(--mumbai-dark);
+    padding: 8px 16px;
+    margin-right: 8px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.nav-tab:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.nav-tab.active {
+    background: var(--sunset-orange);
+    color: white;
+}
+
+.btn-donate {
+    background: var(--sunset-orange);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-donate:hover {
+    background: #e85a4f;
+    transform: translateY(-1px);
+}
+
+/* Tab Content */
+.tab-content {
+    min-height: 80vh;
+}
+
+.tab-section {
+    display: none;
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.tab-section.active {
+    display: block;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Summary Section */
+.hero-summary {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-summary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(58, 81, 153, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(226, 114, 91, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.overshoot-date {
+    position: relative;
+}
+
+.date-display {
+    font-family: 'Roboto Mono', monospace;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, var(--earth-terracotta), #d63031);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
+
+.earth-requirement {
+    position: relative;
+}
+
+.earths-display {
+    margin-bottom: 2rem;
+}
+
+.earth-number {
+    font-family: 'Roboto Mono', monospace;
+    background: linear-gradient(135deg, var(--mumbai-blue), var(--coastal-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Earth Icons Animation */
+.earth-icons {
+    gap: 12px;
+}
+
+.earth-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #4ECDC4, #44A08D);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    animation: earthFloat 3s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.earth-icon::before {
+    content: '🌍';
+    position: absolute;
+    animation: earthRotate 8s linear infinite;
+}
+
+.earth-icon.partial {
+    background: linear-gradient(135deg, #4ECDC4 0%, #4ECDC4 60%, #ddd 60%, #ddd 100%);
+}
+
+@keyframes earthFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes earthRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Mumbai Skyline */
+.mumbai-skyline-container {
+    background: linear-gradient(to bottom, 
+        #87ceeb 0%,     /* Sky blue */
+        #98d8e8 30%,    /* Light blue */
+        #ffd89b 70%,    /* Sunset yellow */
+        #fc9842 100%    /* Sunset orange */
+    );
+    position: relative;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.8s ease;
+}
+
+.atmosphere-layer {
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.8s ease;
+    z-index: 1;
+}
+
+.atmosphere-layer.clean {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.atmosphere-layer.moderate {
+    background: rgba(139, 139, 139, 0.2);
+}
+
+.atmosphere-layer.polluted {
+    background: rgba(139, 139, 139, 0.4);
+}
+
+.time-indicator {
+    z-index: 10;
+    font-size: 12px;
+    animation: fadeInOut 4s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+}
+
+/* Skyline Buildings */
+.skyline-buildings {
+    z-index: 5;
+}
+
+.category-building {
+    position: absolute;
+    bottom: 0;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(to top, rgba(0,0,0,0.1), transparent);
+}
+
+.category-building:hover {
+    transform: scale(1.02) translateY(-3px);
+    z-index: 10;
+}
+
+.transport-tower {
+    background: linear-gradient(to top, var(--transport-blue), #5dade2);
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.3);
+}
+
+.housing-complex {
+    background: linear-gradient(to top, var(--housing-green), #58d68d);
+    box-shadow: 0 0 20px rgba(39, 174, 96, 0.3);
+}
+
+.food-market {
+    background: linear-gradient(to top, var(--food-orange), #f8c471);
+    box-shadow: 0 0 20px rgba(243, 156, 18, 0.3);
+}
+
+.shopping-district {
+    background: linear-gradient(to top, var(--shopping-purple), #bb8fce);
+    box-shadow: 0 0 20px rgba(155, 89, 182, 0.3);
+}
+
+/* Building Windows */
+.building-window {
+    position: absolute;
+    background: #ffd54f;
+    border-radius: 1px;
+    opacity: 0.9;
+    animation: windowFlicker 4s ease-in-out infinite;
+}
+
+@keyframes windowFlicker {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+}
+
+/* Category Cards */
+.impact-card {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.impact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.6s;
+}
+
+.impact-card:hover::before {
+    left: 100%;
+}
+
+.impact-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.impact-icon {
+    background: linear-gradient(135deg, var(--transport-blue), #5dade2);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+/* Emission Bubbles Animation */
+.emission-bubble {
+    width: 8px;
+    height: 8px;
+    background: rgba(52, 152, 219, 0.6);
+    border-radius: 50%;
+    margin: 2px;
+    animation: bubbleFloat 2s ease-in-out infinite;
+}
+
+.emission-bubble:nth-child(2) { animation-delay: 0.5s; }
+.emission-bubble:nth-child(3) { animation-delay: 1s; }
+
+@keyframes bubbleFloat {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+    50% { transform: translateY(-15px) scale(1.2); opacity: 1; }
+}
+
+/* Transport Visual */
+.transport-segment {
+    transition: width 2s ease-out;
+}
+
+/* Emotional Response Section */
+.emotion-option {
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.emotion-option:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: var(--mumbai-blue);
+    box-shadow: 0 8px 25px rgba(58, 81, 153, 0.2);
+}
+
+.emotion-option.selected {
+    background: linear-gradient(135deg, var(--mumbai-blue), var(--coastal-blue));
+    color: white;
+    transform: scale(1.05);
+}
+
+.emotion-option.selected .emotion-label {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+/* Solutions Cards */
+.solution-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.solution-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+    pointer-events: none;
+}
+
+.solution-visual {
+    height: 120px;
+    background: linear-gradient(135deg, rgba(58, 81, 153, 0.1), rgba(71, 168, 189, 0.1));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Isometric Visualizations */
+.isometric-city, .isometric-energy, .isometric-food, .isometric-population, .isometric-planet {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--mumbai-blue), var(--coastal-blue));
+    transform: perspective(100px) rotateX(30deg) rotateY(-15deg);
+    border-radius: 8px;
+    animation: isometricFloat 4s ease-in-out infinite;
+}
+
+@keyframes isometricFloat {
+    0%, 100% { transform: perspective(100px) rotateX(30deg) rotateY(-15deg) translateY(0); }
+    50% { transform: perspective(100px) rotateX(30deg) rotateY(-15deg) translateY(-5px); }
+}
+
+/* Data Visualization */
+.data-card {
+    background: rgba(255, 255, 255, 0.95);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.metric-card {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.1), transparent);
+    pointer-events: none;
+}
+
+/* Loading Animation */
+.loading-overlay {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    z-index: 9999;
+}
+
+.loading-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loading-spinner {
+    border-color: var(--mumbai-blue);
+    border-top-color: transparent;
+}
+
+/* Interactive Features */
+.skyline-overlay {
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.3s ease;
+}
+
+.building-tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    z-index: 1000;
+    pointer-events: none;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.building-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.9) transparent transparent transparent;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-tabs {
+        display: none;
+    }
+    
+    .hero-summary {
+        padding: 1.5rem;
+    }
+    
+    .date-display {
+        font-size: 3rem;
+    }
+    
+    .earth-number {
+        font-size: 3rem;
+    }
+    
+    .mumbai-skyline-container {
+        height: 200px;
+    }
+    
+    .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .emotion-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .solutions-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .date-display {
+        font-size: 2.5rem;
+    }
+    
+    .earth-number {
+        font-size: 2.5rem;
+    }
+    
+    .mumbai-skyline-container {
+        height: 160px;
+    }
+    
+    .earth-icons {
+        gap: 8px;
+    }
+    
+    .earth-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus Styles */
+.nav-tab:focus,
+.emotion-option:focus,
+.solution-card:focus,
+button:focus {
+    outline: 3px solid var(--mumbai-blue);
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+    .mumbai-background {
+        background: white;
+    }
+    
+    .nav-tabs,
+    .emotion-grid,
+    .loading-overlay {
+        display: none;
+    }
+    
+    .tab-section {
+        display: block !important;
+    }
+}
+
+/* Mumbai skyline container styles */
+.skyline-container {
+    background: linear-gradient(to bottom, #87ceeb 0%, #98d8e8 50%, #ffd89b 100%);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.8s ease-in-out;
+}
+
+/* Sun element */
+.sun {
+    background: radial-gradient(circle, #ffeb3b 0%, #ffc107 70%);
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(255, 193, 7, 0.6);
+    transition: all 0.8s ease-in-out;
+    animation: sunPulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes sunPulse {
+    0% { transform: scale(1); box-shadow: 0 0 30px rgba(255, 193, 7, 0.6); }
+    100% { transform: scale(1.1); box-shadow: 0 0 40px rgba(255, 193, 7, 0.8); }
+}
+
+/* Cloud elements */
+.cloud {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50px;
+    opacity: 0.8;
+    transition: all 0.8s ease-in-out;
+    animation: cloudFloat 8s ease-in-out infinite alternate;
+}
+
+.cloud::before {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50px;
+    top: -50%;
+    left: 10%;
+    width: 50%;
+    height: 80%;
+}
+
+.cloud::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50px;
+    top: -30%;
+    right: 15%;
+    width: 60%;
+    height: 60%;
+}
+
+@keyframes cloudFloat {
+    0% { transform: translateX(0px) translateY(0px); }
+    100% { transform: translateX(10px) translateY(-5px); }
+}
+
+/* Skyline base */
+.skyline {
+    background: linear-gradient(to top, #263238 0%, transparent 60%);
+    transition: all 0.8s ease-in-out;
+}
+
+/* Building styles */
+.building {
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(to top, #37474f 0%, #455a64 100%);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.building:hover {
+    background: linear-gradient(to top, #455a64 0%, #546e7a 100%);
+    transform: scale(1.02);
+}
+
+.building::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+/* Window styles */
+.window {
+    position: absolute;
+    background: #ffd54f;
+    border-radius: 2px;
+    box-shadow: 0 0 5px rgba(255, 213, 79, 0.6);
+    animation: windowFlicker 3s ease-in-out infinite alternate;
+}
+
+@keyframes windowFlicker {
+    0% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+/* Mumbai landmarks */
+.landmark {
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(to top, #8d6e63 0%, #a1887f 100%);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.landmark.gateway {
+    border-radius: 15px 15px 0 0;
+    background: linear-gradient(to top, #6d4c41 0%, #8d6e63 100%);
+}
+
+.landmark.taj-hotel {
+    border-radius: 8px 8px 0 0;
+    background: linear-gradient(to top, #4e342e 0%, #6d4c41 100%);
+}
+
+/* Environmental state classes */
+.clean .skyline-container {
+    background: linear-gradient(to bottom, #87ceeb 0%, #98d8e8 40%, #b3e5fc 80%, #e1f5fe 100%);
+}
+
+.clean .sun {
+    opacity: 1;
+    box-shadow: 0 0 40px rgba(255, 193, 7, 0.8);
+}
+
+.clean .cloud {
+    background: rgba(255, 255, 255, 0.95);
+    opacity: 0.9;
+}
+
+.moderate .skyline-container {
+    background: linear-gradient(to bottom, #78909c 0%, #90a4ae 40%, #b0bec5 80%, #cfd8dc 100%);
+}
+
+.moderate .sun {
+    opacity: 0.7;
+    box-shadow: 0 0 25px rgba(255, 193, 7, 0.5);
+}
+
+.moderate .cloud {
+    background: rgba(224, 224, 224, 0.8);
+    opacity: 0.7;
+}
+
+.polluted .skyline-container {
+    background: linear-gradient(to bottom, #455a64 0%, #546e7a 40%, #607d8b 80%, #78909c 100%);
+}
+
+.polluted .sun {
+    opacity: 0.4;
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.3);
+}
+
+.polluted .cloud {
+    background: rgba(158, 158, 158, 0.6);
+    opacity: 0.6;
+}
+
+.polluted .building {
+    background: linear-gradient(to top, #263238 0%, #37474f 100%);
+}
+
+/* Score display animations */
+.score {
+    background: linear-gradient(45deg, #4CAF50, #8BC34A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: scoreGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes scoreGlow {
+    0% { filter: brightness(1); }
+    100% { filter: brightness(1.2); }
+}
+
+/* Card hover effects */
+.category-card, .tip-card {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.category-card:hover, .tip-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Progress bar animations */
+.progress-fill {
+    background: linear-gradient(90deg, #4CAF50 0%, #8BC34A 50%, #CDDC39 100%);
+    animation: progressFill 2s ease-out forwards;
+}
+
+@keyframes progressFill {
+    0% { width: 0%; }
+}
+
+/* Button animations */
+.btn-primary, .btn-secondary, .btn-tertiary {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+/* Mumbai-specific visual elements */
+.mumbai-pattern {
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.1) 0%, transparent 50%);
+}
+
+/* Air quality indicator */
+.air-quality-indicator {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.air-quality-good {
+    color: #4CAF50;
+    border: 2px solid #4CAF50;
+}
+
+.air-quality-moderate {
+    color: #FF9800;
+    border: 2px solid #FF9800;
+}
+
+.air-quality-poor {
+    color: #F44336;
+    border: 2px solid #F44336;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .skyline-container {
+        height: 200px !important;
+    }
+    
+    .sun {
+        width: 40px !important;
+        height: 40px !important;
+        top: 20px !important;
+        right: 40px !important;
+    }
+    
+    .cloud {
+        transform: scale(0.8);
+    }
+    
+    .building {
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+    
+    .score {
+        font-size: 4rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .skyline-container {
+        height: 160px !important;
+    }
+    
+    .sun {
+        width: 32px !important;
+        height: 32px !important;
+        top: 15px !important;
+        right: 30px !important;
+    }
+    
+    .score {
+        font-size: 3rem !important;
+    }
+}
+
+/* Loading animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.fade-in-delay-1 {
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.2s forwards;
+}
+
+.fade-in-delay-2 {
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.4s forwards;
+}
+
+.fade-in-delay-3 {
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.6s forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Mumbai monsoon effect */
+.monsoon .skyline-container {
+    background: linear-gradient(to bottom, #455a64 0%, #546e7a 40%, #607d8b 80%, #78909c 100%);
+}
+
+.monsoon .skyline-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        180deg,
+        transparent 0px,
+        transparent 2px,
+        rgba(255, 255, 255, 0.1) 2px,
+        rgba(255, 255, 255, 0.1) 4px
+    );
+    animation: rain 0.5s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes rain {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+/* Interactive elements */
+.interactive-tip {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.interactive-tip:hover {
+    background: linear-gradient(135deg, #f3e5f5 0%, #e1f5fe 100%);
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus states for accessibility */
+.btn-primary:focus, .btn-secondary:focus, .btn-tertiary:focus,
+.category-card:focus, .tip-card:focus {
+    outline: 3px solid #4CAF50;
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    .eco-background {
+        background: white;
+    }
+    
+    .skyline-container {
+        background: #f5f5f5;
+        border: 1px solid #ddd;
+    }
+    
+    .btn-primary, .btn-secondary, .btn-tertiary {
+        display: none;
+    }
+}

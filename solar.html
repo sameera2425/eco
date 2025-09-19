@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Panel Component</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navigation">
+        <button class="nav-arrow nav-arrow-left" onclick="previousQuestion()">‹</button>
+        <button class="nav-arrow nav-arrow-right" onclick="nextQuestion()">›</button>
+    </nav>
+
+    <div class="container">
+        <div class="title-section">
+            <p class="category">ENERGY</p>
+            <h1 class="main-title">
+                Do you have a solar panel installed at your home?
+            </h1>
+        </div>
+
+        <div class="button-section">
+            <div class="button-container">
+                <button class="option-button" id="no-button" onclick="selectOption('No')">
+                    <img src="https://via.placeholder.com/60x60/e53e3e/ffffff?text=NO" alt="No Solar Panel" class="button-image">
+                    <span>No</span>
+                </button>
+                <button class="option-button" id="yes-button" onclick="selectOption('Yes')">
+                    <img src="https://via.placeholder.com/60x60/38a169/ffffff?text=YES" alt="Solar Panel" class="button-image">
+                    <span>Yes</span>
+                </button>
+            </div>
+            
+            <div class="value-display">
+                <div class="selection-value" id="selection-value"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="solar-script.js"></script>
+</body>
+</html>

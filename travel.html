@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Mode Component</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navigation">
+        <button class="nav-arrow nav-arrow-left" onclick="previousQuestion()">‹</button>
+        <button class="nav-arrow nav-arrow-right" onclick="nextQuestion()">›</button>
+    </nav>
+
+    <div class="container">
+        <div class="title-section">
+            <p class="category">TRAVEL MODE</p>
+            <h1 class="main-title">
+                What is your primary mode of travel for daily commute?
+            </h1>
+        </div>
+
+        <div class="travel-cards-section">
+            <div class="travel-grid">
+                <div class="travel-card" onclick="selectTravelMode('local-train')">
+                    <img src="https://via.placeholder.com/60x60/4a90e2/ffffff?text=TRAIN" alt="Local Train / Metro" class="travel-image">
+                    <div class="travel-label">Local Train / Metro</div>
+                </div>
+
+                <div class="travel-card" onclick="selectTravelMode('best-bus')">
+                    <img src="https://via.placeholder.com/60x60/e53e3e/ffffff?text=BUS" alt="BEST Bus" class="travel-image">
+                    <div class="travel-label">BEST Bus</div>
+                </div>
+
+                <div class="travel-card" onclick="selectTravelMode('shared-auto')">
+                    <img src="https://via.placeholder.com/60x60/38a169/ffffff?text=AUTO" alt="Shared Auto" class="travel-image">
+                    <div class="travel-label">Shared Auto-Rickshaw / Cab (Uber/Ola) – Solo</div>
+                </div>
+
+                <div class="travel-card" onclick="selectTravelMode('private-car')">
+                    <img src="https://via.placeholder.com/60x60/805ad5/ffffff?text=CAR" alt="Private Car" class="travel-image">
+                    <div class="travel-label">Private Car – Solo</div>
+                </div>
+
+                <div class="travel-card" onclick="selectTravelMode('motorcycle')">
+                    <img src="https://via.placeholder.com/60x60/dd6b20/ffffff?text=BIKE" alt="Motorcycle" class="travel-image">
+                    <div class="travel-label">Motorcycle</div>
+                </div>
+
+                <div class="travel-card" onclick="selectTravelMode('walk-cycle')">
+                    <img src="https://via.placeholder.com/60x60/319795/ffffff?text=WALK" alt="Walk / Cycle" class="travel-image">
+                    <div class="travel-label">Walk / Cycle</div>
+                </div>
+            </div>
+
+            <!-- Selection display -->
+            <div class="selection-display" id="travel-selection-display" style="display: none;">
+                <div class="selection-value" id="travel-selection-text"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="travel-script.js"></script>
+</body>
+</html>

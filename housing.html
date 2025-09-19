@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housing Type Component</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navigation">
+        <button class="nav-arrow nav-arrow-left" onclick="previousQuestion()">‹</button>
+        <button class="nav-arrow nav-arrow-right" onclick="nextQuestion()">›</button>
+    </nav>
+
+    <div class="container">
+        <div class="title-section">
+            <p class="category">HOUSING</p>
+            <h1 class="main-title">
+                What type of housing do you live in?
+            </h1>
+        </div>
+
+        <div class="slider-section">
+            <div class="slider-container">
+                <div class="housing-images">
+                    <img src="https://via.placeholder.com/80x60/4a90e2/ffffff?text=1RK" alt="1RK" class="housing-image">
+                    <img src="https://via.placeholder.com/80x60/38a169/ffffff?text=1BHK" alt="1 BHK" class="housing-image">
+                    <img src="https://via.placeholder.com/80x60/e53e3e/ffffff?text=2BHK" alt="2 BHK" class="housing-image">
+                    <img src="https://via.placeholder.com/80x60/805ad5/ffffff?text=3BHK" alt="3 BHK" class="housing-image">
+                    <img src="https://via.placeholder.com/80x60/dd6b20/ffffff?text=3BHK+" alt="3BHK+" class="housing-image">
+                </div>
+                <div class="slider-labels">
+                    <span class="label-left">1RK</span>
+                    <span class="label-right">3BHK+</span>
+                </div>
+                <input type="range" id="housingSlider" class="slider" min="0" max="4" value="1" step="1">
+                <div class="value-display">
+                    <div class="housing-value" id="housing-value">1 BHK</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="housing-script.js"></script>
+</body>
+</html>

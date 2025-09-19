@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Distance Component</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navigation">
+        <button class="nav-arrow nav-arrow-left" onclick="previousQuestion()">‹</button>
+        <button class="nav-arrow nav-arrow-right" onclick="nextQuestion()">›</button>
+    </nav>
+
+    <div class="container">
+        <div class="title-section">
+            <p class="category">TRANSPORTATION</p>
+            <h1 class="main-title">
+                How far do you travel by car or motorcycle each week?
+            </h1>
+            <p class="subtitle">(as a driver or passenger)</p>
+        </div>
+
+        <div class="slider-section">
+            <div class="slider-container">
+                <div class="slider-labels">
+                    <span class="label-left">ZERO</span>
+                    <span class="label-right">VERY FAR</span>
+                </div>
+                <input type="range" id="slider1" class="slider" min="0" max="1000" value="0">
+                <div class="value-display">
+                    <div class="km-value" id="km-value1">0 kms</div>
+                    <div class="miles-value" id="miles-value1">0 miles</div>
+                </div>
+            </div>
+
+            <div class="slider-container">
+                <div class="slider-labels">
+                    <span class="label-left">ZERO</span>
+                    <span class="label-right">VERY FAR</span>
+                </div>
+                <input type="range" id="slider2" class="slider" min="0" max="1000" value="0">
+                <div class="value-display">
+                    <div class="km-value" id="km-value2">0 kms</div>
+                    <div class="miles-value" id="miles-value2">0 miles</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

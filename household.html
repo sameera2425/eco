@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Household Size Component</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navigation">
+        <button class="nav-arrow nav-arrow-left" onclick="previousQuestion()">‹</button>
+        <button class="nav-arrow nav-arrow-right" onclick="nextQuestion()">›</button>
+    </nav>
+
+    <div class="container">
+        <div class="title-section">
+            <p class="category">HOUSEHOLD SIZE</p>
+            <h1 class="main-title">
+                How many people live in your household?
+            </h1>
+        </div>
+
+        <div class="slider-section">
+            <div class="slider-container">
+                <div class="household-image-container">
+                    <img id="household-main-image" src="https://via.placeholder.com/120x120/805ad5/ffffff?text=4" alt="4 people" class="household-main-image">
+                </div>
+                <div class="slider-labels">
+                    <span class="label-left">1</span>
+                    <span class="label-right">10+</span>
+                </div>
+                <input type="range" id="householdSlider" class="slider" min="1" max="10" value="4" step="1">
+                <div class="value-display">
+                    <div class="household-value" id="household-value">4 people</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="household-script.js"></script>
+</body>
+</html>
